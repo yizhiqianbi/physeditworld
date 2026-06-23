@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PhysEditWorld | Gravity-Editable Game World Modeling</title>
+    <title>PhysEditWorld | Physics-Editable World Models</title>
     <meta
       name="description"
-      content="PhysEditWorld is a multimodal dataset for gravity-editable game world modeling built with matched UE5 replay groups."
+      content="PhysEditWorld is a large-scale multimodal dataset toward physics-editable world models built with matched UE5 replay groups."
     />
     <link
       rel="icon"
@@ -25,6 +25,7 @@
         <a href="#pipeline">Pipeline</a>
         <a href="#dataset">Dataset</a>
         <a href="#results">Results</a>
+        <a href="#release">Release</a>
       </nav>
       <a class="nav-action" href="assets/PhysEditWorld.pdf">Paper</a>
     </header>
@@ -34,10 +35,10 @@
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-content reveal">
-          <p class="eyebrow">Anonymous NeurIPS 2026 submission</p>
+          <p class="eyebrow">Anonymous NeurIPS 2026 Dataset and Benchmarks submission</p>
           <h1 id="hero-title">PhysEditWorld</h1>
           <p class="hero-subtitle">
-            A multimodal dataset for gravity-editable game world modeling.
+            A large-scale dataset toward physics-editable world models.
           </p>
           <p class="hero-copy">
             Matched UE5 replay groups keep the scene, action trace, controller,
@@ -46,8 +47,8 @@
           </p>
           <div class="hero-actions" aria-label="Project links">
             <a class="button primary" href="assets/PhysEditWorld.pdf">Read paper</a>
-            <span class="button disabled" aria-disabled="true">Dataset pending</span>
-            <span class="button disabled" aria-disabled="true">Code pending</span>
+            <a class="button" href="https://github.com/yizhiqianbi/physeditworld">GitHub repository</a>
+            <a class="button" href="#release">Code and data release</a>
           </div>
         </div>
         <dl class="hero-stats reveal" aria-label="Dataset scale">
@@ -195,6 +196,22 @@
           <span>5.0g</span>
           <span>20.0g</span>
         </div>
+        <div class="sample-layout reveal" aria-label="Dataset sample layout">
+          <div>
+            <h3>Canonical sample layout</h3>
+            <p>
+              Each sample is one recording-rendering job under a fixed scene,
+              action sequence, camera setup, and physical configuration.
+            </p>
+          </div>
+          <pre><code>&lt;dataset_root&gt;/
+  Video/&lt;sample_id&gt;/&lt;camera_name&gt;.mp4
+  Meta/&lt;sample_id&gt;_meta_frame.csv
+  Meta/&lt;sample_id&gt;_meta_time.csv
+  PhysicalConfig/&lt;physical_config_name&gt;.json
+  Aux/&lt;aux_type&gt;/&lt;sample_id&gt;/&lt;camera_name&gt;/&lt;frame_id&gt;.png
+  Details.json</code></pre>
+        </div>
       </section>
 
       <section class="section results-section" id="results" aria-labelledby="results-title">
@@ -258,11 +275,77 @@
         </div>
       </section>
 
+      <section class="section release-section" id="release" aria-labelledby="release-title">
+        <div class="section-kicker">Release Plan</div>
+        <div class="release-grid">
+          <div class="section-copy reveal">
+            <h2 id="release-title">Code, data, and evaluation scripts will live in this repository.</h2>
+            <p>
+              The public release is planned to include synchronized RGB videos,
+              depth maps, normal maps, gravity annotations, camera trajectories,
+              action traces, and evaluation scripts. The UE5 replay-and-rendering
+              pipeline will be released as an editor plug-in with generation
+              configs and example replay assets.
+            </p>
+            <p>
+              Some third-party UE5 scene assets may have redistribution limits.
+              When raw assets cannot be redistributed, the repository will provide
+              replacement assets, asset lists, or reconstruction instructions.
+            </p>
+            <div class="release-actions">
+              <a class="button dark" href="https://github.com/yizhiqianbi/physeditworld">Open repository</a>
+              <a class="button ghost" href="assets/PhysEditWorld.pdf">Download paper</a>
+            </div>
+          </div>
+          <div class="release-list reveal" aria-label="Planned repository contents">
+            <article>
+              <span>01</span>
+              <h3>Dataset index</h3>
+              <p>Details.json, sample metadata, physical configuration files, and modality paths.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>UE5 DataFactory plug-in</h3>
+              <p>Editor workflow for scene setup, replay capture, physical editing, rendering, and recovery.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Evaluation scripts</h3>
+              <p>Gravity-conditioned generation, gravity-response metrics, and VLM gravity prediction utilities.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Example subset</h3>
+              <p>A small downloadable subset for quick inspection and dataloader verification.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section citation-section" id="citation" aria-labelledby="citation-title">
+        <div class="section-kicker">Citation</div>
+        <div class="citation-grid">
+          <div class="section-copy reveal">
+            <h2 id="citation-title">Cite PhysEditWorld</h2>
+            <p>
+              The current manuscript is anonymous for review. The citation block
+              will be updated with author information after the review period.
+            </p>
+          </div>
+          <pre class="citation-box reveal"><code>@inproceedings{physeditworld2026,
+  title = {PhysEditWorld: A Large-Scale Dataset Toward Physics-Editable World Models},
+  author = {Anonymous Authors},
+  booktitle = {Submitted to NeurIPS Datasets and Benchmarks Track},
+  year = {2026}
+}</code></pre>
+        </div>
+      </section>
+
     </main>
 
     <footer class="site-footer">
       <span>PhysEditWorld</span>
-      <span>Gravity-editable game world modeling</span>
+      <span><a href="https://github.com/yizhiqianbi/physeditworld">GitHub</a> · <a href="assets/PhysEditWorld.pdf">Paper</a></span>
     </footer>
 
     <script src="script.js"></script>

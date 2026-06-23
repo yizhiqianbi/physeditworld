@@ -503,6 +503,40 @@ figcaption {
   background: var(--accent-strong);
 }
 
+.sample-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.55fr) minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 54px);
+  align-items: start;
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(23, 32, 51, 0.16);
+}
+
+.sample-layout h3 {
+  margin-bottom: 10px;
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  line-height: 1.1;
+}
+
+.sample-layout p {
+  margin-bottom: 0;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.sample-layout pre,
+.citation-box {
+  margin: 0;
+  overflow-x: auto;
+  padding: clamp(18px, 2.6vw, 28px);
+  color: #e9fbff;
+  background: #111722;
+  border: 1px solid rgba(23, 32, 51, 0.16);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
 .results-section {
   background: #141a24;
   color: #f7fbff;
@@ -604,6 +638,85 @@ figcaption {
   color: rgba(247, 251, 255, 0.58);
 }
 
+.release-section {
+  background: var(--surface);
+}
+
+.release-grid,
+.citation-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.74fr) minmax(0, 1.26fr);
+  align-items: start;
+  gap: clamp(32px, 5vw, 72px);
+}
+
+.release-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button.dark {
+  color: #ffffff;
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.button.ghost {
+  color: var(--ink);
+  border-color: rgba(23, 32, 51, 0.24);
+}
+
+.button.ghost:hover,
+.button.ghost:focus-visible {
+  border-color: rgba(23, 32, 51, 0.7);
+}
+
+.release-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.release-list article {
+  min-height: 220px;
+  padding: clamp(20px, 2.6vw, 32px);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #f5f8f4;
+}
+
+.release-list span {
+  display: block;
+  margin-bottom: 42px;
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+  font-weight: 820;
+}
+
+.release-list h3 {
+  margin-bottom: 10px;
+  font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+  line-height: 1.12;
+}
+
+.release-list p {
+  margin-bottom: 0;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.citation-section {
+  background: #eef4f6;
+}
+
+.citation-box {
+  color: #edfaff;
+  background: #101620;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -660,13 +773,17 @@ figcaption {
   .split-layout,
   .pipeline-section .split-layout,
   .dataset-header,
-  .results-heading {
+  .results-heading,
+  .sample-layout,
+  .release-grid,
+  .citation-grid {
     grid-template-columns: 1fr;
   }
 
   .principle-row,
   .modality-grid,
-  .result-grid {
+  .result-grid,
+  .release-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -741,6 +858,7 @@ figcaption {
   .principle-row,
   .modality-grid,
   .result-grid,
+  .release-list,
   .gravity-strip {
     grid-template-columns: 1fr;
   }
