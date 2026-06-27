@@ -131,9 +131,9 @@ a {
   position: absolute;
   inset: 0;
   z-index: -3;
-  background-image: url("assets/hero-overview.png");
+  background-image: url("assets/hero-independent.png");
   background-size: cover;
-  background-position: 58% 48%;
+  background-position: 58% 50%;
   transform: scale(1.045);
   transition: transform 800ms ease;
 }
@@ -733,6 +733,11 @@ figcaption {
   transition:
     opacity 650ms ease,
     transform 650ms ease;
+}
+
+.hero .reveal {
+  opacity: 1;
+  transform: none;
 }
 
 .reveal.is-visible {

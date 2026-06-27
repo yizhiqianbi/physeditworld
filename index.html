@@ -6,7 +6,7 @@
     <title>PhysEditWorld | Physics-Editable World Models</title>
     <meta
       name="description"
-      content="PhysEditWorld is a large-scale multimodal dataset toward physics-editable world models built with matched UE5 replay groups."
+      content="PhysEditWorld is a multimodal dataset for studying editable physical rules in game world models with matched UE5 replay groups."
     />
     <link
       rel="icon"
@@ -35,15 +35,16 @@
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-content reveal">
-          <p class="eyebrow">Anonymous NeurIPS 2026 Dataset and Benchmarks submission</p>
+          <p class="eyebrow">Matched replay dataset for editable game physics</p>
           <h1 id="hero-title">PhysEditWorld</h1>
           <p class="hero-subtitle">
-            A large-scale dataset toward physics-editable world models.
+            A dataset for testing whether world models respond to edited gravity.
           </p>
           <p class="hero-copy">
             Matched UE5 replay groups keep the scene, action trace, controller,
-            and camera policy fixed while gravity changes, making physical edits
-            measurable instead of hidden inside visual imitation.
+            and camera policy fixed while gravity changes. The result is a
+            controlled setting for measuring physical edits instead of hiding
+            them inside visual imitation.
           </p>
           <div class="hero-actions" aria-label="Project links">
             <a class="button primary" href="assets/PhysEditWorld.pdf">Read paper</a>
@@ -221,17 +222,18 @@
           <p>
             Initial experiments cover gravity-conditioned video generation,
             action-conditioned first-person world modeling, and gravity-aware
-            video-language understanding.
+            video-language understanding. The current numbers are utility
+            studies rather than a complete model leaderboard.
           </p>
         </div>
         <div class="result-grid">
           <article class="result reveal">
             <p class="result-label">Video generation</p>
-            <h3>Gravity alignment reaches 100%</h3>
+            <h3>A representative free-fall case follows gravity ordering</h3>
             <p>
-              After PhysEditWorld LoRA tuning, Wan2.2-TI2V-5B preserves gravity
-              ordering in a matched free-fall case, improving alignment from
-              33.3% to 100%.
+              In one matched free-fall study, PhysEditWorld LoRA tuning makes
+              Wan2.2-TI2V-5B more responsive to requested gravity, improving
+              pairwise ordering from 33.3% to 100% within that case.
             </p>
             <div class="metric-pair" aria-label="Video generation metrics">
               <span><b>0.066</b> zero-shot R2</span>
@@ -240,16 +242,17 @@
           </article>
           <article class="result reveal">
             <p class="result-label">World modeling</p>
-            <h3>Action-conditioned motion becomes gravity-sensitive</h3>
+            <h3>Action-conditioned rollout exposes a baseline failure</h3>
             <p>
               A rooftop stress test shows baseline models staying near the
-              platform edge, while PhysEditWorld-tuned LingBotWorld departs the
-              platform and scales downward self-motion with requested gravity.
+              platform edge, while PhysEditWorld-tuned LingBotWorld departs
+              the platform and produces downward self-motion under edited
+              gravity.
             </p>
           </article>
           <article class="result reveal">
             <p class="result-label">Video-language models</p>
-            <h3>Gravity class accuracy improves to 95.29%</h3>
+            <h3>Gravity-aware VLM tuning improves held-out prediction</h3>
             <p>
               Qwen3-VL-8B improves from below-random zero-shot classification to
               fine-grained gravity prediction after LoRA SFT on PhysEditWorld.
@@ -276,16 +279,16 @@
       </section>
 
       <section class="section release-section" id="release" aria-labelledby="release-title">
-        <div class="section-kicker">Release Plan</div>
+        <div class="section-kicker">Release Status</div>
         <div class="release-grid">
           <div class="section-copy reveal">
-            <h2 id="release-title">Code, data, and evaluation scripts will live in this repository.</h2>
+            <h2 id="release-title">Code, data, and evaluation scripts will be staged in this repository.</h2>
             <p>
-              The public release is planned to include synchronized RGB videos,
-              depth maps, normal maps, gravity annotations, camera trajectories,
-              action traces, and evaluation scripts. The UE5 replay-and-rendering
-              pipeline will be released as an editor plug-in with generation
-              configs and example replay assets.
+              The repository currently hosts the project page, paper, and
+              release documentation. Planned release packages include
+              synchronized RGB videos, depth maps, normal maps, gravity
+              annotations, camera trajectories, action traces, and evaluation
+              scripts.
             </p>
             <p>
               Some third-party UE5 scene assets may have redistribution limits.
@@ -295,6 +298,7 @@
             <div class="release-actions">
               <a class="button dark" href="https://github.com/yizhiqianbi/physeditworld">Open repository</a>
               <a class="button ghost" href="assets/PhysEditWorld.pdf">Download paper</a>
+              <a class="button ghost" href="data/">Data notes</a>
             </div>
           </div>
           <div class="release-list reveal" aria-label="Planned repository contents">
@@ -328,15 +332,15 @@
           <div class="section-copy reveal">
             <h2 id="citation-title">Cite PhysEditWorld</h2>
             <p>
-              The current manuscript is anonymous for review. The citation block
-              will be updated with author information after the review period.
+              This placeholder citation will be updated when the manuscript
+              record is finalized.
             </p>
           </div>
-          <pre class="citation-box reveal"><code>@inproceedings{physeditworld2026,
+          <pre class="citation-box reveal"><code>@misc{physeditworld2026,
   title = {PhysEditWorld: A Large-Scale Dataset Toward Physics-Editable World Models},
-  author = {Anonymous Authors},
-  booktitle = {Submitted to NeurIPS Datasets and Benchmarks Track},
-  year = {2026}
+  author = {PhysEditWorld Team},
+  year = {2026},
+  note = {Project page and dataset release repository}
 }</code></pre>
         </div>
       </section>
