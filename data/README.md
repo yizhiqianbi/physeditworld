@@ -2,6 +2,15 @@
 
 This directory documents the expected dataset layout, metadata contract, and release checklist for PhysEditWorld. Download links and subset manifests will be added here as data packages become available.
 
+## Data Access
+
+- Dataset page: https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld
+- Git clone endpoint: `https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld.git`
+
+```bash
+git clone https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld.git
+```
+
 ## Release Packages
 
 The release is planned as separate packages so users can choose the level of storage they need.
