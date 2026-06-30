@@ -159,7 +159,7 @@ video {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 920px;
+  max-width: 1120px;
   margin-inline: auto;
   color: #ffffff;
   text-align: center;
@@ -200,11 +200,54 @@ h1 {
 
 .tagline {
   max-width: 790px;
-  margin: 0 auto 28px;
+  margin: 0 auto 22px;
   color: rgba(255, 255, 255, 0.86);
   font-size: clamp(1.5rem, 3.1vw, 3.15rem);
   font-weight: 700;
   line-height: 1.12;
+}
+
+.authors {
+  max-width: 1040px;
+  margin: 0 auto 24px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.authors p {
+  margin-bottom: 8px;
+}
+
+.authors p:last-child {
+  margin-bottom: 0;
+}
+
+.author-list,
+.affiliations,
+.author-notes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px 13px;
+}
+
+.author-list {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.9rem, 1.32vw, 1.08rem);
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.affiliations,
+.author-notes {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: clamp(0.72rem, 1vw, 0.84rem);
+  line-height: 1.35;
+}
+
+.authors sup {
+  color: rgba(147, 197, 253, 0.95);
+  font-size: 0.7em;
+  line-height: 0;
 }
 
 .pills,
@@ -217,7 +260,7 @@ h1 {
 }
 
 .pills {
-  margin-bottom: 34px;
+  margin-bottom: 28px;
 }
 
 .pill {
@@ -554,6 +597,21 @@ code {
 
   .tagline {
     font-size: clamp(1.4rem, 8vw, 2.3rem);
+  }
+
+  .authors {
+    margin-bottom: 22px;
+  }
+
+  .author-list {
+    gap: 4px 9px;
+    font-size: 0.84rem;
+  }
+
+  .affiliations,
+  .author-notes {
+    gap: 4px 8px;
+    font-size: 0.68rem;
   }
 
   .btn-group,
