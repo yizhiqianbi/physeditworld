@@ -6,226 +6,205 @@
     <title>PhysEditWorld | PhysicalWorld Dataset</title>
     <meta
       name="description"
-      content="PhysEditWorld / PhysicalWorld is a matched UE5 replay dataset for studying gravity-editable game world models."
+      content="PhysEditWorld / PhysicalWorld is a matched UE5 replay dataset for studying gravity-editable world models."
     />
     <link
       rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='12' y='12' width='40' height='40' rx='6' fill='%23247b7b'/%3E%3Cpath d='M18 39c9-20 20-20 28 0' fill='none' stroke='%23fff' stroke-width='5'/%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='14' y='14' width='36' height='36' fill='none' stroke='%232563eb' stroke-width='5' transform='rotate(45 32 32)'/%3E%3C/svg%3E"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="PhysEditWorld home">
+    <header class="navbar">
+      <a class="brand" href="#top">
         <span class="brand-mark" aria-hidden="true"></span>
         <span>PhysEditWorld</span>
       </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#overview">Overview</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#abstract">Overview</a>
         <a href="#demos">Demos</a>
         <a href="#data">Data</a>
-        <a href="#release">Release</a>
+        <a href="#citation">Citation</a>
       </nav>
-      <a class="nav-action" href="https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld">ModelScope</a>
     </header>
 
     <main id="top">
       <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">PhysicalWorld dataset</p>
-          <h1>PhysEditWorld</h1>
-          <p class="hero-subtitle">
-            Matched UE5 replays for gravity-editable world models.
-          </p>
-          <p class="hero-text">
-            The same scene, action trace, controller, and camera rig are replayed
-            under different gravity settings, making physical edits directly
-            inspectable across synchronized views.
-          </p>
-          <div class="actions" aria-label="Project links">
-            <a class="button primary" href="https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld">ModelScope dataset</a>
-            <a class="button" href="assets/PhysEditWorld.pdf">Paper</a>
-            <a class="button" href="https://github.com/yizhiqianbi/physeditworld">GitHub</a>
-          </div>
-        </div>
-
-        <div class="hero-media" aria-label="Representative demo videos">
-          <article>
+        <div class="hero-panel">
+          <div class="hero-media" aria-hidden="true">
             <video autoplay muted loop playsinline preload="metadata" poster="assets/demos/00000005-group1.jpg">
               <source src="assets/demos/00000005-group1.mp4" type="video/mp4" />
             </video>
-            <span>MarsRover / 1.0g</span>
-          </article>
-          <article>
             <video autoplay muted loop playsinline preload="metadata" poster="assets/demos/00000025-group1.jpg">
               <source src="assets/demos/00000025-group1.mp4" type="video/mp4" />
             </video>
-            <span>CyberCity / 1.0g</span>
-          </article>
-          <article>
             <video autoplay muted loop playsinline preload="metadata" poster="assets/demos/00000045-group1.jpg">
               <source src="assets/demos/00000045-group1.mp4" type="video/mp4" />
             </video>
-            <span>MoonWalk / 1.0g</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="stats-strip" aria-label="Dataset statistics">
-        <div><strong>12</strong><span>UE5 scenes</span></div>
-        <div><strong>100h+</strong><span>interactions</span></div>
-        <div><strong>60M+</strong><span>rendered frames</span></div>
-        <div><strong>8</strong><span>camera views</span></div>
-        <div><strong>7</strong><span>gravity levels</span></div>
-      </section>
-
-      <section class="section overview-section" id="overview">
-        <div class="section-head">
-          <p class="eyebrow">Overview</p>
-          <h2>One interaction trace, many physical worlds.</h2>
-        </div>
-        <div class="overview-grid">
-          <article>
-            <span>01</span>
-            <h3>Matched replay groups</h3>
-            <p>Scene, initial state, action trace, controller, and camera policy stay fixed while gravity changes.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Multi-view evidence</h3>
-            <p>Each demo sample includes two tiled videos covering eight synchronized views.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Engine-side metadata</h3>
-            <p>Frame logs, camera trajectories, action inputs, and physical configuration files share the same timeline.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section demo-section" id="demos">
-        <div class="section-head split-head">
-          <div>
-            <p class="eyebrow">Demo subset</p>
-            <h2>Browse matched gravity variants.</h2>
           </div>
-          <div class="demo-controls" aria-label="Demo filters">
+          <div class="hero-overlay" aria-hidden="true"></div>
+          <div class="hero-content">
+            <p class="venue"><span></span>Dataset Project Page</p>
+            <h1>PhysEditWorld</h1>
+            <p class="tagline">
+              Matched UE5 replay groups for studying gravity-editable world models.
+            </p>
+            <div class="pills" aria-label="Dataset keywords">
+              <span class="pill">Gravity editing</span>
+              <span class="pill">Matched replay</span>
+              <span class="pill">8 synchronized views</span>
+              <span class="pill">60M+ frames</span>
+            </div>
+            <div class="btn-group" aria-label="Project links">
+              <a class="btn btn-primary" href="https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld">ModelScope</a>
+              <a class="btn btn-outline" href="assets/PhysEditWorld.pdf">Paper PDF</a>
+              <a class="btn btn-outline" href="https://github.com/yizhiqianbi/physeditworld">Code</a>
+            </div>
+          </div>
+        </div>
+
+        <dl class="metrics" aria-label="Dataset scale">
+          <div><dt>12</dt><dd>UE5 scenes</dd></div>
+          <div><dt>100h+</dt><dd>interactions</dd></div>
+          <div><dt>60M+</dt><dd>rendered frames</dd></div>
+          <div><dt>8</dt><dd>camera views</dd></div>
+          <div><dt>7</dt><dd>gravity levels</dd></div>
+        </dl>
+      </section>
+
+      <section class="section" id="abstract">
+        <div class="container narrow">
+          <h2>Overview</h2>
+          <div class="abstract-box">
+            <p>
+              PhysEditWorld studies whether world models can respond to physical
+              rules as editable parameters. Each matched replay group keeps the
+              scene, initial state, action trace, controller, and camera policy
+              fixed while changing gravity.
+            </p>
+            <p>
+              The dataset exports synchronized multi-view videos and engine-side
+              metadata, making physical differences directly inspectable across
+              counterfactual rollouts.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="demos">
+        <div class="container">
+          <h2>Demo Gallery</h2>
+          <p class="section-subtitle">
+            Representative matched replay groups from the demo subset.
+          </p>
+          <div class="gallery-controls" aria-label="Demo filters">
             <button class="filter-button is-active" type="button" data-scene-filter="all">All</button>
             <button class="filter-button" type="button" data-scene-filter="MarsRover">MarsRover</button>
             <button class="filter-button" type="button" data-scene-filter="CyberCity">CyberCity</button>
             <button class="filter-button" type="button" data-scene-filter="MoonWalk">MoonWalk</button>
             <button class="filter-button" type="button" data-pause-all>Pause all</button>
           </div>
-        </div>
 
-        <div class="scene-block" data-scene="MarsRover">
-          <div class="scene-title">
-            <h3>MarsRover</h3>
-            <p>Mars traversal replayed at low, normal, and high gravity.</p>
+          <div class="scene-card" data-scene="MarsRover">
+            <div class="scene-title">
+              <h3>MarsRover</h3>
+              <p>Mars traversal replayed at low, normal, and high gravity.</p>
+            </div>
+            <div class="demo-grid">
+              <article class="demo-item">
+                <div class="demo-meta"><strong>G_0.25</strong><span>sample 00000002</span></div>
+                <div class="video-pair">
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000002-group1.jpg"><source src="assets/demos/00000002-group1.mp4" type="video/mp4" /></video>
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000002-group2.jpg"><source src="assets/demos/00000002-group2.mp4" type="video/mp4" /></video>
+                </div>
+              </article>
+              <article class="demo-item">
+                <div class="demo-meta"><strong>G_1.0</strong><span>sample 00000005</span></div>
+                <div class="video-pair">
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000005-group1.jpg"><source src="assets/demos/00000005-group1.mp4" type="video/mp4" /></video>
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000005-group2.jpg"><source src="assets/demos/00000005-group2.mp4" type="video/mp4" /></video>
+                </div>
+              </article>
+              <article class="demo-item">
+                <div class="demo-meta"><strong>G_10</strong><span>sample 00000006</span></div>
+                <div class="video-pair">
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000006-group1.jpg"><source src="assets/demos/00000006-group1.mp4" type="video/mp4" /></video>
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000006-group2.jpg"><source src="assets/demos/00000006-group2.mp4" type="video/mp4" /></video>
+                </div>
+              </article>
+            </div>
           </div>
-          <div class="demo-grid">
-            <article class="demo-card">
-              <div class="demo-meta"><strong>G_0.25</strong><span>sample 00000002</span></div>
-              <div class="video-pair">
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000002-group1.jpg"><source src="assets/demos/00000002-group1.mp4" type="video/mp4" /></video>
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000002-group2.jpg"><source src="assets/demos/00000002-group2.mp4" type="video/mp4" /></video>
-              </div>
-            </article>
-            <article class="demo-card">
-              <div class="demo-meta"><strong>G_1.0</strong><span>sample 00000005</span></div>
-              <div class="video-pair">
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000005-group1.jpg"><source src="assets/demos/00000005-group1.mp4" type="video/mp4" /></video>
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000005-group2.jpg"><source src="assets/demos/00000005-group2.mp4" type="video/mp4" /></video>
-              </div>
-            </article>
-            <article class="demo-card">
-              <div class="demo-meta"><strong>G_10</strong><span>sample 00000006</span></div>
-              <div class="video-pair">
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000006-group1.jpg"><source src="assets/demos/00000006-group1.mp4" type="video/mp4" /></video>
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000006-group2.jpg"><source src="assets/demos/00000006-group2.mp4" type="video/mp4" /></video>
-              </div>
-            </article>
-          </div>
-        </div>
 
-        <div class="scene-block" data-scene="CyberCity">
-          <div class="scene-title">
-            <h3>CyberCity</h3>
-            <p>Urban rooftop motion under counterfactual gravity settings.</p>
+          <div class="scene-card" data-scene="CyberCity">
+            <div class="scene-title">
+              <h3>CyberCity</h3>
+              <p>Urban rooftop motion under counterfactual gravity settings.</p>
+            </div>
+            <div class="demo-grid">
+              <article class="demo-item">
+                <div class="demo-meta"><strong>G_0.25</strong><span>sample 00000022</span></div>
+                <div class="video-pair">
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000022-group1.jpg"><source src="assets/demos/00000022-group1.mp4" type="video/mp4" /></video>
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000022-group2.jpg"><source src="assets/demos/00000022-group2.mp4" type="video/mp4" /></video>
+                </div>
+              </article>
+              <article class="demo-item">
+                <div class="demo-meta"><strong>G_1.0</strong><span>sample 00000025</span></div>
+                <div class="video-pair">
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000025-group1.jpg"><source src="assets/demos/00000025-group1.mp4" type="video/mp4" /></video>
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000025-group2.jpg"><source src="assets/demos/00000025-group2.mp4" type="video/mp4" /></video>
+                </div>
+              </article>
+              <article class="demo-item">
+                <div class="demo-meta"><strong>G_10</strong><span>sample 00000026</span></div>
+                <div class="video-pair">
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000026-group1.jpg"><source src="assets/demos/00000026-group1.mp4" type="video/mp4" /></video>
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000026-group2.jpg"><source src="assets/demos/00000026-group2.mp4" type="video/mp4" /></video>
+                </div>
+              </article>
+            </div>
           </div>
-          <div class="demo-grid">
-            <article class="demo-card">
-              <div class="demo-meta"><strong>G_0.25</strong><span>sample 00000022</span></div>
-              <div class="video-pair">
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000022-group1.jpg"><source src="assets/demos/00000022-group1.mp4" type="video/mp4" /></video>
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000022-group2.jpg"><source src="assets/demos/00000022-group2.mp4" type="video/mp4" /></video>
-              </div>
-            </article>
-            <article class="demo-card">
-              <div class="demo-meta"><strong>G_1.0</strong><span>sample 00000025</span></div>
-              <div class="video-pair">
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000025-group1.jpg"><source src="assets/demos/00000025-group1.mp4" type="video/mp4" /></video>
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000025-group2.jpg"><source src="assets/demos/00000025-group2.mp4" type="video/mp4" /></video>
-              </div>
-            </article>
-            <article class="demo-card">
-              <div class="demo-meta"><strong>G_10</strong><span>sample 00000026</span></div>
-              <div class="video-pair">
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000026-group1.jpg"><source src="assets/demos/00000026-group1.mp4" type="video/mp4" /></video>
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000026-group2.jpg"><source src="assets/demos/00000026-group2.mp4" type="video/mp4" /></video>
-              </div>
-            </article>
-          </div>
-        </div>
 
-        <div class="scene-block" data-scene="MoonWalk">
-          <div class="scene-title">
-            <h3>MoonWalk</h3>
-            <p>Lunar-style motion with synchronized first-person, third-person, and side views.</p>
-          </div>
-          <div class="demo-grid">
-            <article class="demo-card">
-              <div class="demo-meta"><strong>G_0.25</strong><span>sample 00000042</span></div>
-              <div class="video-pair">
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000042-group1.jpg"><source src="assets/demos/00000042-group1.mp4" type="video/mp4" /></video>
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000042-group2.jpg"><source src="assets/demos/00000042-group2.mp4" type="video/mp4" /></video>
-              </div>
-            </article>
-            <article class="demo-card">
-              <div class="demo-meta"><strong>G_1.0</strong><span>sample 00000045</span></div>
-              <div class="video-pair">
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000045-group1.jpg"><source src="assets/demos/00000045-group1.mp4" type="video/mp4" /></video>
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000045-group2.jpg"><source src="assets/demos/00000045-group2.mp4" type="video/mp4" /></video>
-              </div>
-            </article>
-            <article class="demo-card">
-              <div class="demo-meta"><strong>G_10</strong><span>sample 00000046</span></div>
-              <div class="video-pair">
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000046-group1.jpg"><source src="assets/demos/00000046-group1.mp4" type="video/mp4" /></video>
-                <video controls muted playsinline preload="metadata" poster="assets/demos/00000046-group2.jpg"><source src="assets/demos/00000046-group2.mp4" type="video/mp4" /></video>
-              </div>
-            </article>
+          <div class="scene-card" data-scene="MoonWalk">
+            <div class="scene-title">
+              <h3>MoonWalk</h3>
+              <p>Lunar-style motion with synchronized first-person, third-person, and side views.</p>
+            </div>
+            <div class="demo-grid">
+              <article class="demo-item">
+                <div class="demo-meta"><strong>G_0.25</strong><span>sample 00000042</span></div>
+                <div class="video-pair">
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000042-group1.jpg"><source src="assets/demos/00000042-group1.mp4" type="video/mp4" /></video>
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000042-group2.jpg"><source src="assets/demos/00000042-group2.mp4" type="video/mp4" /></video>
+                </div>
+              </article>
+              <article class="demo-item">
+                <div class="demo-meta"><strong>G_1.0</strong><span>sample 00000045</span></div>
+                <div class="video-pair">
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000045-group1.jpg"><source src="assets/demos/00000045-group1.mp4" type="video/mp4" /></video>
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000045-group2.jpg"><source src="assets/demos/00000045-group2.mp4" type="video/mp4" /></video>
+                </div>
+              </article>
+              <article class="demo-item">
+                <div class="demo-meta"><strong>G_10</strong><span>sample 00000046</span></div>
+                <div class="video-pair">
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000046-group1.jpg"><source src="assets/demos/00000046-group1.mp4" type="video/mp4" /></video>
+                  <video controls muted playsinline preload="metadata" poster="assets/demos/00000046-group2.jpg"><source src="assets/demos/00000046-group2.mp4" type="video/mp4" /></video>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section data-section" id="data">
-        <div class="section-head">
-          <p class="eyebrow">Data format</p>
-          <h2>Canonical sample layout.</h2>
-        </div>
-        <div class="data-layout">
-          <div>
-            <p>
-              Each sample is one recording-rendering job under a fixed scene,
-              action sequence, camera setup, and physical configuration.
-            </p>
-            <ul>
-              <li>RGB videos grouped by camera view.</li>
-              <li>Frame-level and time-level metadata.</li>
-              <li>Physical configuration JSON files.</li>
-              <li>Optional auxiliary modalities such as depth and normals.</li>
-            </ul>
+      <section class="section" id="data">
+        <div class="container narrow">
+          <h2>Data</h2>
+          <div class="resource-grid">
+            <a href="https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld"><strong>ModelScope</strong><span>Dataset entry</span></a>
+            <a href="https://github.com/yizhiqianbi/physeditworld"><strong>GitHub</strong><span>Project repository</span></a>
+            <a href="assets/PhysEditWorld.pdf"><strong>Paper</strong><span>PDF</span></a>
+            <a href="data/"><strong>Schema</strong><span>Data notes</span></a>
           </div>
           <pre><code>&lt;dataset_root&gt;/
   Video/&lt;sample_id&gt;/&lt;camera_name&gt;.mp4
@@ -237,43 +216,22 @@
         </div>
       </section>
 
-      <section class="section release-section" id="release">
-        <div class="release-panel">
-          <div>
-            <p class="eyebrow">Release</p>
-            <h2>Dataset access and project materials.</h2>
-            <p>
-              The ModelScope page is the public dataset entry. This GitHub
-              repository hosts the project page, paper, schema notes, and staged
-              code/data documentation.
-            </p>
-          </div>
-          <div class="release-links">
-            <a class="button primary" href="https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld">Open ModelScope</a>
-            <a class="button" href="https://github.com/yizhiqianbi/physeditworld">GitHub repository</a>
-            <a class="button" href="assets/PhysEditWorld.pdf">Paper PDF</a>
-            <a class="button" href="data/">Data notes</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section citation-section">
-        <div class="section-head">
-          <p class="eyebrow">Citation</p>
-          <h2>Cite PhysEditWorld.</h2>
-        </div>
-        <pre><code>@misc{physeditworld2026,
+      <section class="section" id="citation">
+        <div class="container narrow">
+          <h2>Citation</h2>
+          <pre><code>@misc{physeditworld2026,
   title = {PhysEditWorld: A Large-Scale Dataset Toward Physics-Editable World Models},
   author = {PhysEditWorld Team},
   year = {2026},
   note = {Project page and dataset release repository}
 }</code></pre>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <span>PhysEditWorld</span>
-      <span><a href="https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld">ModelScope</a> · <a href="https://github.com/yizhiqianbi/physeditworld">GitHub</a> · <a href="assets/PhysEditWorld.pdf">Paper</a></span>
+      <a href="https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld">ModelScope</a>
     </footer>
 
     <script src="script.js"></script>
