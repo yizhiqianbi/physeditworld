@@ -125,7 +125,10 @@ The current project page reports initial utility studies. Full benchmark scripts
 ├── script.js
 ├── assets/
 │   ├── PhysEditWorld.pdf
-│   ├── hero-independent.png
+│   ├── demos/
+│   │   ├── 00000002-group1.mp4
+│   │   ├── 00000002-group2.mp4
+│   │   └── ...
 │   ├── overview.png
 │   ├── pipeline.png
 │   └── vlm_table.png
@@ -145,7 +148,7 @@ This repository is the public home for the PhysEditWorld project page and releas
 | 📦 ModelScope dataset entry | Available | See [GelerCAT/PhysicalWorld](https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld). |
 | 📄 Paper PDF | Available | See `assets/PhysEditWorld.pdf`. |
 | 🗂️ Dataset schema | Documented | See `data/README.md` for the canonical layout and metadata contract. |
-| 🧪 Example subset | Planned | A small subset will be provided for dataloader and schema validation. |
+| 🧪 Demo subset | Available on page | The project page shows representative MarsRover, CyberCity, and MoonWalk replay groups. |
 | 🧱 Full dataset | Planned | Release depends on packaging, storage, and asset-license review. |
 | 🛠️ UE5 pipeline code | Planned | Expected to include the DataFactory editor plugin, batch rendering wrappers, cleaning tools, and configs. |
 | 📊 Evaluation scripts | Planned | Expected to cover gravity response metrics and VLM gravity prediction. |

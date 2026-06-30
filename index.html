@@ -3,350 +3,272 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PhysEditWorld | Physics-Editable World Models</title>
+    <title>PhysEditWorld | PhysicalWorld Dataset</title>
     <meta
       name="description"
-      content="PhysEditWorld is a multimodal dataset for studying editable physical rules in game world models with matched UE5 replay groups."
+      content="PhysEditWorld / PhysicalWorld is a matched UE5 replay dataset for studying gravity-editable game world models."
     />
     <link
       rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='14' y='14' width='36' height='36' fill='%230f8f9e' transform='rotate(45 32 32)'/%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='12' y='12' width='40' height='40' rx='6' fill='%23247b7b'/%3E%3Cpath d='M18 39c9-20 20-20 28 0' fill='none' stroke='%23fff' stroke-width='5'/%3E%3C/svg%3E"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header" data-header>
+    <header class="site-header">
       <a class="brand" href="#top" aria-label="PhysEditWorld home">
         <span class="brand-mark" aria-hidden="true"></span>
         <span>PhysEditWorld</span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="#overview">Overview</a>
-        <a href="#pipeline">Pipeline</a>
-        <a href="#dataset">Dataset</a>
-        <a href="#results">Results</a>
+        <a href="#demos">Demos</a>
+        <a href="#data">Data</a>
         <a href="#release">Release</a>
       </nav>
-      <a class="nav-action" href="https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld">Dataset</a>
+      <a class="nav-action" href="https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld">ModelScope</a>
     </header>
 
     <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-bg" aria-hidden="true"></div>
-        <div class="hero-shade" aria-hidden="true"></div>
-        <div class="hero-content reveal">
-          <p class="eyebrow">Matched replay dataset for editable game physics</p>
-          <h1 id="hero-title">PhysEditWorld</h1>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">PhysicalWorld dataset</p>
+          <h1>PhysEditWorld</h1>
           <p class="hero-subtitle">
-            A dataset for testing whether world models respond to edited gravity.
+            Matched UE5 replays for gravity-editable world models.
           </p>
-          <p class="hero-copy">
-            Matched UE5 replay groups keep the scene, action trace, controller,
-            and camera policy fixed while gravity changes. The result is a
-            controlled setting for measuring physical edits instead of hiding
-            them inside visual imitation.
+          <p class="hero-text">
+            The same scene, action trace, controller, and camera rig are replayed
+            under different gravity settings, making physical edits directly
+            inspectable across synchronized views.
           </p>
-          <div class="hero-actions" aria-label="Project links">
+          <div class="actions" aria-label="Project links">
             <a class="button primary" href="https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld">ModelScope dataset</a>
-            <a class="button" href="assets/PhysEditWorld.pdf">Read paper</a>
-            <a class="button" href="https://github.com/yizhiqianbi/physeditworld">GitHub repository</a>
-            <a class="button" href="#release">Release notes</a>
+            <a class="button" href="assets/PhysEditWorld.pdf">Paper</a>
+            <a class="button" href="https://github.com/yizhiqianbi/physeditworld">GitHub</a>
           </div>
         </div>
-        <dl class="hero-stats reveal" aria-label="Dataset scale">
-          <div>
-            <dt>12</dt>
-            <dd>Cinematic UE5 scenes</dd>
-          </div>
-          <div>
-            <dt>100h+</dt>
-            <dd>Gameplay interactions</dd>
-          </div>
-          <div>
-            <dt>60M+</dt>
-            <dd>Rendered rollout frames</dd>
-          </div>
-          <div>
-            <dt>8</dt>
-            <dd>Synchronized camera views</dd>
-          </div>
-        </dl>
-      </section>
 
-      <section class="section intro-section" id="overview" aria-labelledby="overview-title">
-        <div class="section-kicker">One World, Many Physics</div>
-        <div class="intro-grid">
-          <div class="section-copy reveal">
-            <h2 id="overview-title">A matched replay protocol for editable physical rules.</h2>
-            <p>
-              Existing game world models can look plausible while ignoring the
-              requested physics. PhysEditWorld turns gravity into an explicit
-              control variable: the same authored scenario is replayed under
-              counterfactual gravity settings, so differences in jump arcs,
-              airtime, fall speed, and landing dynamics can be attributed to the
-              physical edit.
-            </p>
-          </div>
-          <figure class="figure-panel reveal">
-            <img
-              src="assets/overview.png"
-              alt="Overview of PhysEditWorld with cinematic scenes, gravity variants, interaction traces, camera trajectories, and multimodal render outputs."
-            />
-            <figcaption>
-              Matched rollouts combine cinematic UE5 scenes, gravity variants,
-              multi-view rendering, and synchronized multimodal annotations.
-            </figcaption>
-          </figure>
+        <div class="hero-media" aria-label="Representative demo videos">
+          <article>
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/demos/00000005-group1.jpg">
+              <source src="assets/demos/00000005-group1.mp4" type="video/mp4" />
+            </video>
+            <span>MarsRover / 1.0g</span>
+          </article>
+          <article>
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/demos/00000025-group1.jpg">
+              <source src="assets/demos/00000025-group1.mp4" type="video/mp4" />
+            </video>
+            <span>CyberCity / 1.0g</span>
+          </article>
+          <article>
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/demos/00000045-group1.jpg">
+              <source src="assets/demos/00000045-group1.mp4" type="video/mp4" />
+            </video>
+            <span>MoonWalk / 1.0g</span>
+          </article>
         </div>
       </section>
 
-      <section class="section thesis-section" aria-labelledby="thesis-title">
-        <div class="section-kicker">Research Question</div>
-        <h2 id="thesis-title" class="wide-heading reveal">
-          Can a world model respond to a physical rule as an editable parameter,
-          rather than treating physics as a fixed dataset regularity?
-        </h2>
-        <div class="principle-row" aria-label="PhysEditWorld design principles">
-          <article class="principle reveal">
+      <section class="stats-strip" aria-label="Dataset statistics">
+        <div><strong>12</strong><span>UE5 scenes</span></div>
+        <div><strong>100h+</strong><span>interactions</span></div>
+        <div><strong>60M+</strong><span>rendered frames</span></div>
+        <div><strong>8</strong><span>camera views</span></div>
+        <div><strong>7</strong><span>gravity levels</span></div>
+      </section>
+
+      <section class="section overview-section" id="overview">
+        <div class="section-head">
+          <p class="eyebrow">Overview</p>
+          <h2>One interaction trace, many physical worlds.</h2>
+        </div>
+        <div class="overview-grid">
+          <article>
             <span>01</span>
-            <h3>Hold behavior fixed</h3>
-            <p>Scene, initial state, action sequence, controller, and camera policy stay matched.</p>
+            <h3>Matched replay groups</h3>
+            <p>Scene, initial state, action trace, controller, and camera policy stay fixed while gravity changes.</p>
           </article>
-          <article class="principle reveal">
+          <article>
             <span>02</span>
-            <h3>Edit gravity explicitly</h3>
-            <p>Gravity multipliers create counterfactual rollouts from the same interaction trace.</p>
+            <h3>Multi-view evidence</h3>
+            <p>Each demo sample includes two tiled videos covering eight synchronized views.</p>
           </article>
-          <article class="principle reveal">
+          <article>
             <span>03</span>
-            <h3>Export aligned evidence</h3>
-            <p>RGB, depth, normals, audio, actions, camera paths, engine state, and labels share one frame timeline.</p>
-          </article>
-          <article class="principle reveal">
-            <span>04</span>
-            <h3>Evaluate physical faithfulness</h3>
-            <p>Utility studies test whether generated motion follows requested gravity ordering.</p>
+            <h3>Engine-side metadata</h3>
+            <p>Frame logs, camera trajectories, action inputs, and physical configuration files share the same timeline.</p>
           </article>
         </div>
       </section>
 
-      <section class="section pipeline-section" id="pipeline" aria-labelledby="pipeline-title">
-        <div class="section-kicker">DataFactory Pipeline</div>
-        <div class="split-layout">
-          <div class="section-copy reveal">
-            <h2 id="pipeline-title">UE5-native capture, replay, rendering, and annotation.</h2>
-            <p>
-              PhysEditWorld uses an in-editor UE5 DataFactory plug-in instead
-              of a separate simulator. It registers authored levels, binds
-              character controllers and camera policies, injects normalized
-              action traces, edits physical parameters, then exports synchronized
-              observations and engine logs.
-            </p>
-            <ol class="step-list">
-              <li><span>A</span> Build scenario libraries from human, agent, or scripted inputs.</li>
-              <li><span>B</span> Replay the same scenario while editing only physical configuration.</li>
-              <li><span>C</span> Expand matched counterfactual replay groups across gravity levels.</li>
-              <li><span>D</span> Export multi-view videos, trajectories, modalities, captions, and labels.</li>
-            </ol>
-          </div>
-          <figure class="figure-panel pipeline-figure reveal">
-            <img
-              src="assets/pipeline.png"
-              alt="PhysEditWorld data pipeline showing input sources, controlled UE5 simulation, matched replay groups, and exported annotations."
-            />
-            <figcaption>
-              A matched group shares scene, action, and cameras while varying
-              only the physical configuration.
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="section dataset-section" id="dataset" aria-labelledby="dataset-title">
-        <div class="section-kicker">Dataset Contents</div>
-        <div class="dataset-header reveal">
-          <h2 id="dataset-title">Every rollout is multimodal, synchronized, and gravity-labeled.</h2>
-          <p>
-            Samples are rendered at 30 FPS and 1280 x 720 resolution, with
-            metadata exported in UE5 world coordinates and physical scale.
-          </p>
-        </div>
-        <div class="modality-grid" aria-label="Modalities">
-          <div class="modality reveal">
-            <h3>Observation</h3>
-            <p>RGB video, depth maps, surface normals, and spatial audio when available.</p>
-          </div>
-          <div class="modality reveal">
-            <h3>Interaction</h3>
-            <p>Normalized action traces, camera trajectory, character state, and object state.</p>
-          </div>
-          <div class="modality reveal">
-            <h3>Physical Edit</h3>
-            <p>Explicit gravity labels across matched replay groups and counterfactual variants.</p>
-          </div>
-          <div class="modality reveal">
-            <h3>Semantic Layer</h3>
-            <p>Per-clip captions generated from rendered frames without simulator metadata.</p>
-          </div>
-        </div>
-        <div class="gravity-strip reveal" aria-label="Gravity multipliers">
-          <span>0.05g</span>
-          <span>0.1g</span>
-          <span>0.5g</span>
-          <strong>1.0g</strong>
-          <span>2.0g</span>
-          <span>5.0g</span>
-          <span>20.0g</span>
-        </div>
-        <div class="sample-layout reveal" aria-label="Dataset sample layout">
+      <section class="section demo-section" id="demos">
+        <div class="section-head split-head">
           <div>
-            <h3>Canonical sample layout</h3>
+            <p class="eyebrow">Demo subset</p>
+            <h2>Browse matched gravity variants.</h2>
+          </div>
+          <div class="demo-controls" aria-label="Demo filters">
+            <button class="filter-button is-active" type="button" data-scene-filter="all">All</button>
+            <button class="filter-button" type="button" data-scene-filter="MarsRover">MarsRover</button>
+            <button class="filter-button" type="button" data-scene-filter="CyberCity">CyberCity</button>
+            <button class="filter-button" type="button" data-scene-filter="MoonWalk">MoonWalk</button>
+            <button class="filter-button" type="button" data-pause-all>Pause all</button>
+          </div>
+        </div>
+
+        <div class="scene-block" data-scene="MarsRover">
+          <div class="scene-title">
+            <h3>MarsRover</h3>
+            <p>Mars traversal replayed at low, normal, and high gravity.</p>
+          </div>
+          <div class="demo-grid">
+            <article class="demo-card">
+              <div class="demo-meta"><strong>G_0.25</strong><span>sample 00000002</span></div>
+              <div class="video-pair">
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000002-group1.jpg"><source src="assets/demos/00000002-group1.mp4" type="video/mp4" /></video>
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000002-group2.jpg"><source src="assets/demos/00000002-group2.mp4" type="video/mp4" /></video>
+              </div>
+            </article>
+            <article class="demo-card">
+              <div class="demo-meta"><strong>G_1.0</strong><span>sample 00000005</span></div>
+              <div class="video-pair">
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000005-group1.jpg"><source src="assets/demos/00000005-group1.mp4" type="video/mp4" /></video>
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000005-group2.jpg"><source src="assets/demos/00000005-group2.mp4" type="video/mp4" /></video>
+              </div>
+            </article>
+            <article class="demo-card">
+              <div class="demo-meta"><strong>G_10</strong><span>sample 00000006</span></div>
+              <div class="video-pair">
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000006-group1.jpg"><source src="assets/demos/00000006-group1.mp4" type="video/mp4" /></video>
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000006-group2.jpg"><source src="assets/demos/00000006-group2.mp4" type="video/mp4" /></video>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="scene-block" data-scene="CyberCity">
+          <div class="scene-title">
+            <h3>CyberCity</h3>
+            <p>Urban rooftop motion under counterfactual gravity settings.</p>
+          </div>
+          <div class="demo-grid">
+            <article class="demo-card">
+              <div class="demo-meta"><strong>G_0.25</strong><span>sample 00000022</span></div>
+              <div class="video-pair">
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000022-group1.jpg"><source src="assets/demos/00000022-group1.mp4" type="video/mp4" /></video>
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000022-group2.jpg"><source src="assets/demos/00000022-group2.mp4" type="video/mp4" /></video>
+              </div>
+            </article>
+            <article class="demo-card">
+              <div class="demo-meta"><strong>G_1.0</strong><span>sample 00000025</span></div>
+              <div class="video-pair">
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000025-group1.jpg"><source src="assets/demos/00000025-group1.mp4" type="video/mp4" /></video>
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000025-group2.jpg"><source src="assets/demos/00000025-group2.mp4" type="video/mp4" /></video>
+              </div>
+            </article>
+            <article class="demo-card">
+              <div class="demo-meta"><strong>G_10</strong><span>sample 00000026</span></div>
+              <div class="video-pair">
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000026-group1.jpg"><source src="assets/demos/00000026-group1.mp4" type="video/mp4" /></video>
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000026-group2.jpg"><source src="assets/demos/00000026-group2.mp4" type="video/mp4" /></video>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="scene-block" data-scene="MoonWalk">
+          <div class="scene-title">
+            <h3>MoonWalk</h3>
+            <p>Lunar-style motion with synchronized first-person, third-person, and side views.</p>
+          </div>
+          <div class="demo-grid">
+            <article class="demo-card">
+              <div class="demo-meta"><strong>G_0.25</strong><span>sample 00000042</span></div>
+              <div class="video-pair">
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000042-group1.jpg"><source src="assets/demos/00000042-group1.mp4" type="video/mp4" /></video>
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000042-group2.jpg"><source src="assets/demos/00000042-group2.mp4" type="video/mp4" /></video>
+              </div>
+            </article>
+            <article class="demo-card">
+              <div class="demo-meta"><strong>G_1.0</strong><span>sample 00000045</span></div>
+              <div class="video-pair">
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000045-group1.jpg"><source src="assets/demos/00000045-group1.mp4" type="video/mp4" /></video>
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000045-group2.jpg"><source src="assets/demos/00000045-group2.mp4" type="video/mp4" /></video>
+              </div>
+            </article>
+            <article class="demo-card">
+              <div class="demo-meta"><strong>G_10</strong><span>sample 00000046</span></div>
+              <div class="video-pair">
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000046-group1.jpg"><source src="assets/demos/00000046-group1.mp4" type="video/mp4" /></video>
+                <video controls muted playsinline preload="metadata" poster="assets/demos/00000046-group2.jpg"><source src="assets/demos/00000046-group2.mp4" type="video/mp4" /></video>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section data-section" id="data">
+        <div class="section-head">
+          <p class="eyebrow">Data format</p>
+          <h2>Canonical sample layout.</h2>
+        </div>
+        <div class="data-layout">
+          <div>
             <p>
               Each sample is one recording-rendering job under a fixed scene,
               action sequence, camera setup, and physical configuration.
             </p>
+            <ul>
+              <li>RGB videos grouped by camera view.</li>
+              <li>Frame-level and time-level metadata.</li>
+              <li>Physical configuration JSON files.</li>
+              <li>Optional auxiliary modalities such as depth and normals.</li>
+            </ul>
           </div>
           <pre><code>&lt;dataset_root&gt;/
   Video/&lt;sample_id&gt;/&lt;camera_name&gt;.mp4
   Meta/&lt;sample_id&gt;_meta_frame.csv
   Meta/&lt;sample_id&gt;_meta_time.csv
   PhysicalConfig/&lt;physical_config_name&gt;.json
-  Aux/&lt;aux_type&gt;/&lt;sample_id&gt;/&lt;camera_name&gt;/&lt;frame_id&gt;.png
+  Aux/&lt;aux_type&gt;/&lt;sample_id&gt;/...
   Details.json</code></pre>
         </div>
       </section>
 
-      <section class="section results-section" id="results" aria-labelledby="results-title">
-        <div class="section-kicker">Utility Studies</div>
-        <div class="results-heading reveal">
-          <h2 id="results-title">PhysEditWorld exposes gravity failures that visual quality alone can miss.</h2>
-          <p>
-            Initial experiments cover gravity-conditioned video generation,
-            action-conditioned first-person world modeling, and gravity-aware
-            video-language understanding. The current numbers are utility
-            studies rather than a complete model leaderboard.
-          </p>
-        </div>
-        <div class="result-grid">
-          <article class="result reveal">
-            <p class="result-label">Video generation</p>
-            <h3>A representative free-fall case follows gravity ordering</h3>
+      <section class="section release-section" id="release">
+        <div class="release-panel">
+          <div>
+            <p class="eyebrow">Release</p>
+            <h2>Dataset access and project materials.</h2>
             <p>
-              In one matched free-fall study, PhysEditWorld LoRA tuning makes
-              Wan2.2-TI2V-5B more responsive to requested gravity, improving
-              pairwise ordering from 33.3% to 100% within that case.
+              The ModelScope page is the public dataset entry. This GitHub
+              repository hosts the project page, paper, schema notes, and staged
+              code/data documentation.
             </p>
-            <div class="metric-pair" aria-label="Video generation metrics">
-              <span><b>0.066</b> zero-shot R2</span>
-              <span><b>0.570</b> tuned R2</span>
-            </div>
-          </article>
-          <article class="result reveal">
-            <p class="result-label">World modeling</p>
-            <h3>Action-conditioned rollout exposes a baseline failure</h3>
-            <p>
-              A rooftop stress test shows baseline models staying near the
-              platform edge, while PhysEditWorld-tuned LingBotWorld departs
-              the platform and produces downward self-motion under edited
-              gravity.
-            </p>
-          </article>
-          <article class="result reveal">
-            <p class="result-label">Video-language models</p>
-            <h3>Gravity-aware VLM tuning improves held-out prediction</h3>
-            <p>
-              Qwen3-VL-8B improves from below-random zero-shot classification to
-              fine-grained gravity prediction after LoRA SFT on PhysEditWorld.
-            </p>
-            <div class="metric-pair" aria-label="VLM metrics">
-              <span><b>24.71%</b> zero-shot</span>
-              <span><b>95.29%</b> tuned</span>
-            </div>
-          </article>
-        </div>
-        <div class="comparison reveal" aria-label="Qwen3-VL gravity prediction comparison">
-          <div class="comparison-row">
-            <span>Qwen3-VL-8B</span>
-            <div class="bar-track"><span style="--value: 24.71%"></span></div>
-            <strong>24.71%</strong>
           </div>
-          <div class="comparison-row">
-            <span>Qwen3-VL-8B + SFT</span>
-            <div class="bar-track"><span style="--value: 95.29%"></span></div>
-            <strong>95.29%</strong>
-          </div>
-          <p>Class accuracy on held-out gravity-aware prediction rollouts.</p>
-        </div>
-      </section>
-
-      <section class="section release-section" id="release" aria-labelledby="release-title">
-        <div class="section-kicker">Release Status</div>
-        <div class="release-grid">
-          <div class="section-copy reveal">
-            <h2 id="release-title">Code, data, and evaluation scripts will be staged in this repository.</h2>
-            <p>
-              The repository currently hosts the project page, paper, and
-              release documentation. Planned release packages include
-              synchronized RGB videos, depth maps, normal maps, gravity
-              annotations, camera trajectories, action traces, and evaluation
-              scripts.
-            </p>
-            <p>
-              Some third-party UE5 scene assets may have redistribution limits.
-              When raw assets cannot be redistributed, the repository will provide
-              replacement assets, asset lists, or reconstruction instructions.
-            </p>
-            <div class="release-actions">
-              <a class="button dark" href="https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld">Open ModelScope dataset</a>
-              <a class="button dark" href="https://github.com/yizhiqianbi/physeditworld">Open repository</a>
-              <a class="button ghost" href="assets/PhysEditWorld.pdf">Download paper</a>
-              <a class="button ghost" href="data/">Data notes</a>
-            </div>
-          </div>
-          <div class="release-list reveal" aria-label="Planned repository contents">
-            <article>
-              <span>01</span>
-              <h3>ModelScope dataset entry</h3>
-              <p>Primary public entry for PhysEditWorld dataset packages and future dataset updates.</p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>Dataset index</h3>
-              <p>Details.json, sample metadata, physical configuration files, and modality paths.</p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>UE5 DataFactory plug-in</h3>
-              <p>Editor workflow for scene setup, replay capture, physical editing, rendering, and recovery.</p>
-            </article>
-            <article>
-              <span>04</span>
-              <h3>Evaluation scripts</h3>
-              <p>Gravity-conditioned generation, gravity-response metrics, and VLM gravity prediction utilities.</p>
-            </article>
+          <div class="release-links">
+            <a class="button primary" href="https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld">Open ModelScope</a>
+            <a class="button" href="https://github.com/yizhiqianbi/physeditworld">GitHub repository</a>
+            <a class="button" href="assets/PhysEditWorld.pdf">Paper PDF</a>
+            <a class="button" href="data/">Data notes</a>
           </div>
         </div>
       </section>
 
-      <section class="section citation-section" id="citation" aria-labelledby="citation-title">
-        <div class="section-kicker">Citation</div>
-        <div class="citation-grid">
-          <div class="section-copy reveal">
-            <h2 id="citation-title">Cite PhysEditWorld</h2>
-            <p>
-              This placeholder citation will be updated when the manuscript
-              record is finalized.
-            </p>
-          </div>
-          <pre class="citation-box reveal"><code>@misc{physeditworld2026,
+      <section class="section citation-section">
+        <div class="section-head">
+          <p class="eyebrow">Citation</p>
+          <h2>Cite PhysEditWorld.</h2>
+        </div>
+        <pre><code>@misc{physeditworld2026,
   title = {PhysEditWorld: A Large-Scale Dataset Toward Physics-Editable World Models},
   author = {PhysEditWorld Team},
   year = {2026},
   note = {Project page and dataset release repository}
 }</code></pre>
-        </div>
       </section>
-
     </main>
 
     <footer class="site-footer">
