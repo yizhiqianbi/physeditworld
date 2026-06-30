@@ -168,13 +168,16 @@ Do not assume that commercial UE5 scene assets are redistributable unless they a
 
 ## 📝 Citation
 
-The citation will be updated when the manuscript record is finalized.
+If you use PhysEditWorld, please cite:
 
 ```bibtex
-@misc{physeditworld2026,
-  title = {PhysEditWorld: A Large-Scale Dataset Toward Physics-Editable World Models},
-  author = {PhysEditWorld Team},
-  year = {2026},
-  note = {Project page and dataset release repository}
+@misc{hu2026physeditworldlargescaledatasetphysicseditable,
+      title={PhysEditWorld: A Large-Scale Dataset Toward Physics-Editable World Models},
+      author={Bin Hu and Yanwen Ma and Jiehui Huang and Ziliang Zhang and Haoning Wu and Ruicheng Zhang and Yaokun Li and Zijun Wang and Yuechen Zhang and Chun-Mei Tseng and Hanhui Li and Shengju Qian and Jun Zhou and Kaipeng Zhang and Xiaodan Liang and Jiaya Jia and Xiu Li},
+      year={2026},
+      eprint={2606.26694},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2606.26694},
 }
 ```
