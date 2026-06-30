@@ -7,7 +7,7 @@ PhysEditWorld is a multimodal dataset for studying **editable physical rules** i
 <p align="center">
   <a href="https://yizhiqianbi.github.io/physeditworld/"><strong>🌐 Project Page</strong></a> ·
   <a href="https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld"><strong>📦 ModelScope Dataset</strong></a> ·
-  <a href="assets/PhysEditWorld.pdf"><strong>📄 Paper</strong></a> ·
+  <a href="https://arxiv.org/abs/2606.26694"><strong>📄 arXiv</strong></a> ·
   <a href="data/"><strong>🗂️ Data Notes</strong></a> ·
   <a href="code/"><strong>🛠️ Code Notes</strong></a>
 </p>
@@ -146,7 +146,7 @@ This repository is the public home for the PhysEditWorld project page and releas
 | --- | --- | --- |
 | 🌐 Project page | Available | Static GitHub Pages site in this repository. |
 | 📦 ModelScope dataset entry | Available | See [GelerCAT/PhysicalWorld](https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld). |
-| 📄 Paper PDF | Available | See `assets/PhysEditWorld.pdf`. |
+| 📄 arXiv paper | Available | See [arXiv:2606.26694](https://arxiv.org/abs/2606.26694). |
 | 🗂️ Dataset schema | Documented | See `data/README.md` for the canonical layout and metadata contract. |
 | 🧪 Demo subset | Available on page | The project page shows representative MarsRover, CyberCity, and MoonWalk replay groups. |
 | 🧱 Full dataset | Planned | Release depends on packaging, storage, and asset-license review. |

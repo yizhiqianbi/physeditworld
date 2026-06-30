@@ -32,14 +32,8 @@
       <section class="hero">
         <div class="hero-panel">
           <div class="hero-media" aria-hidden="true">
-            <video autoplay muted loop playsinline preload="metadata" poster="assets/demos/00000005-group1.jpg">
+            <video class="hero-video" data-hero-video autoplay muted loop playsinline preload="auto" poster="assets/demos/00000005-group1.jpg">
               <source src="assets/demos/00000005-group1.mp4" type="video/mp4" />
-            </video>
-            <video autoplay muted loop playsinline preload="metadata" poster="assets/demos/00000025-group1.jpg">
-              <source src="assets/demos/00000025-group1.mp4" type="video/mp4" />
-            </video>
-            <video autoplay muted loop playsinline preload="metadata" poster="assets/demos/00000045-group1.jpg">
-              <source src="assets/demos/00000045-group1.mp4" type="video/mp4" />
             </video>
           </div>
           <div class="hero-overlay" aria-hidden="true"></div>
@@ -49,7 +43,7 @@
               A Large-Scale Dataset Toward Physics-Editable World Models
             </p>
             <div class="pills" aria-label="Dataset keywords">
-              <span class="pill">Gravity editing</span>
+              <span class="pill">Physics Editing</span>
               <span class="pill">Matched replay</span>
               <span class="pill">8 synchronized views</span>
               <span class="pill">60M+ frames</span>
@@ -62,8 +56,16 @@
                 </svg>
                 <span>ModelScope</span>
               </a>
-              <a class="btn btn-outline" href="assets/PhysEditWorld.pdf">Paper PDF</a>
+              <a class="btn btn-outline" href="https://arxiv.org/abs/2606.26694">arXiv</a>
               <a class="btn btn-outline" href="https://github.com/yizhiqianbi/physeditworld">Code</a>
+              <button class="btn btn-outline sound-toggle" type="button" data-hero-sound aria-pressed="false">
+                <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 10v4h4l5 4V6l-5 4H4Z" fill="currentColor" />
+                  <path d="M16 9c1.1 1.7 1.1 4.3 0 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M19 6.5c2.4 3.2 2.4 7.8 0 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+                <span>Audio</span>
+              </button>
             </div>
           </div>
         </div>
@@ -204,7 +206,7 @@
           <div class="resource-grid">
             <a href="https://www.modelscope.cn/datasets/GelerCAT/PhysicalWorld"><strong>ModelScope</strong><span>Dataset entry</span></a>
             <a href="https://github.com/yizhiqianbi/physeditworld"><strong>GitHub</strong><span>Project repository</span></a>
-            <a href="assets/PhysEditWorld.pdf"><strong>Paper</strong><span>PDF</span></a>
+            <a href="https://arxiv.org/abs/2606.26694"><strong>Paper</strong><span>arXiv</span></a>
             <a href="data/"><strong>Schema</strong><span>Data notes</span></a>
           </div>
           <pre><code>&lt;dataset_root&gt;/

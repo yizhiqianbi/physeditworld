@@ -141,19 +141,14 @@ video {
 }
 
 .hero-media {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  padding: 32px;
-  opacity: 0.38;
-  transform: rotate(-3deg) scale(1.08);
+  opacity: 0.46;
 }
 
 .hero-media video {
   height: 100%;
+  width: 100%;
   object-fit: cover;
-  border-radius: 24px;
-  filter: saturate(0.85);
+  filter: saturate(0.82) contrast(1.08);
 }
 
 .hero-overlay {
@@ -269,6 +264,20 @@ h1 {
   border: 1px solid rgba(255, 255, 255, 0.22);
   background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
+}
+
+.btn-outline:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.36);
+}
+
+.sound-toggle {
+  appearance: none;
+}
+
+.sound-toggle.is-on {
+  border-color: var(--accent);
+  background: rgba(96, 165, 250, 0.18);
 }
 
 .btn-icon {
@@ -535,14 +544,7 @@ code {
   }
 
   .hero-media {
-    grid-template-columns: 1fr;
-    padding: 18px;
-    opacity: 0.28;
-    transform: none;
-  }
-
-  .hero-media video:nth-child(n + 2) {
-    display: none;
+    opacity: 0.32;
   }
 
   h1 {
